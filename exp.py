@@ -26,6 +26,9 @@ def list_notes():
 
 
 
+def count_notes():
+    """Return the total number of notes"""
+    return len(notes)
 
 
 
