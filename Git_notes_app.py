@@ -37,6 +37,10 @@ def search_notes(keyword, notes):
     else:
         print("No notes found with that keyword.")
 
+def count_notes():
+    return len(notes)
+
+
 # --- CLI Menu ---
 if __name__ == "__main__":
     while True:
@@ -45,6 +49,8 @@ if __name__ == "__main__":
         print("2. Delete Note")
         print("3. List Notes")
         print("4. Exit")
+        print("5.Count Notes")
+
         
         choice = input("Choose an option: ")
 
@@ -57,7 +63,9 @@ if __name__ == "__main__":
         elif choice == "3":
             list_notes()
         elif choice == "4":
-            print("👋 Goodbye!")
+            print(" Goodbye!")
             break
+        elif choice == "5":
+            print(f" You have {count_notes()} notes.")
         else:
             print(" Invalid choice")
