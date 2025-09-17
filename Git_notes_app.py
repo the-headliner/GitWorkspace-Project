@@ -24,7 +24,7 @@ def list_notes():
     else:
         print(" No notes found.")
 
-
+############################
 def search_notes(keyword, notes):
     """
     Search notes containing the given keyword.
@@ -38,7 +38,24 @@ def search_notes(keyword, notes):
         print("No notes found with that keyword.")
 
 def count_notes():
+    """Return the total number of notes"""
     return len(notes)
+
+def duplicate_note(note):
+    """
+    Duplicate a note if it exists.
+    """
+    if note in notes:
+        notes.append(note)
+        print(f"Note duplicated: {note}")
+    else:
+        print(f"Note not found: {note}")
+
+
+
+
+
+
 
 
 # --- CLI Menu ---
@@ -50,6 +67,8 @@ if __name__ == "__main__":
         print("3. List Notes")
         print("4. Exit")
         print("5.Count Notes")
+        print("6.Duplicate note")
+
 
         
         choice = input("Choose an option: ")
@@ -67,5 +86,9 @@ if __name__ == "__main__":
             break
         elif choice == "5":
             print(f" You have {count_notes()} notes.")
+        elif choice == "5":
+            note = input("Enter note to duplicate: ")
+            duplicate_note(note)
+
         else:
             print(" Invalid choice")
