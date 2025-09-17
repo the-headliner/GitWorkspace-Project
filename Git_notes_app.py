@@ -24,6 +24,19 @@ def list_notes():
     else:
         print(" No notes found.")
 
+
+def search_notes(keyword, notes):
+    """
+    Search notes containing the given keyword.
+    """
+    results = [note for note in notes if keyword.lower() in note.lower()]
+    if results:
+        print("Found notes:")
+        for r in results:
+            print("-", r)
+    else:
+        print("No notes found with that keyword.")
+
 # --- CLI Menu ---
 if __name__ == "__main__":
     while True:
